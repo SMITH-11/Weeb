@@ -9,6 +9,7 @@ def get_anime_details(mal_id):
     image_url = data["images"]["webp"]["image_url"]
     trailer_embed_url = data["trailer"]["embed_url"]
     titles = [title["title"] for title in data["titles"]]
+    title = data['title']
     name_eng =data["title_english"]
     name_jap = data["title_japanese"]
     title_synonyms = data["title_synonyms"]
@@ -45,6 +46,7 @@ def get_anime_details(mal_id):
         "image_url": image_url,
         "trailer_embed_url": trailer_embed_url,
         "titles": titles,
+        "title": title,
         "nameJap": name_jap,
         "nameEng": name_eng,
         "title_synonyms": title_synonyms,

@@ -1,4 +1,4 @@
-from anime_streaming_app import create_app
+from kami import create_app
 
 app = create_app()
 

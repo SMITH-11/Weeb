@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request
 from trending import get_trending_data
 from search import searchAnime
 from detail import get_anime_details
-import random
+from freak import main
 
 routes = Blueprint('routes', __name__)
 
@@ -27,5 +27,19 @@ def trending():
 def know_more(mal_id):
     data = get_anime_details(mal_id)
     image = data['image_url']
-    print(image)
-    return render_template('know_more.html', data=data, img=image)
+    title = data['title']
+    episodes = data['episodes']
+    if episodes is None or episodes == 'None':
+        episodes = 'undefined'
+    else:
+        episodes = int(episodes)
+    return render_template('know_more.html', data=data, img=image, title=title, episodes=episodes)
+
+
+@routes.route('/watch/episode', methods=['POST'])
+def watch_episode():
+    title = request.form['title']
+    episode = int(request.form.get('episodes'))
+    urls = main(title, episode)
+    url = urls[0]
+    return render_template('watch.html', urls=urls, url=url, title=title)
