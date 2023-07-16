@@ -2,90 +2,29 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
-    <h2 class="text-white">Watch Now</h2>
-    <div class="embed-responsive embed-responsive-16by9">
-        <iframe id="episode-iframe" frameborder="0" allowfullscreen="true" scrollable="no"></iframe>
-    </div>
-    
-    <h3 class="text-white mt-4">Episodes:</h3>
-    <div class="row">
-        <div class="col-md-12">
-            <div id="episode-buttons" class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
-                {% set episodes_count = urls|length %}
-                {% set max_rows = 10 %}
-                {% set max_columns = 10 %}
-                {% set total_items = max_rows * max_columns %}
-                {% set range_size = max_rows * max_columns %}
-                {% set current_range_start = 0 %}
-                {% set current_range_end = current_range_start + range_size %}
-                {% set range_index = 0 %}
-                {% set max_range_index = episodes_count // range_size %}
-                {% for url in urls[current_range_start:current_range_end] %}
-                    {% if loop.index0 % max_columns == 0 %}
-                        <div class="btn-group mb-2" role="group">
-                    {% endif %}
-                    <label class="btn btn-primary btn-episode">
-                        <input type="radio" name="options" autocomplete="off" onclick="loadEpisode('{{ url }}')">
-                        <span id="episode-number-{{ loop.index }}" class="episode-number">{{ loop.index + current_range_start + 1 }}</span>
-                    </label>
-                    {% if loop.index0 % max_columns == (max_columns - 1) or loop.last %}
-                        </div>
-                        {% if range_index == 0 and max_range_index > 0 and loop.last %}
-                            <div class="btn-group btn-group-sm mt-2">
-                                <button id="previous-button" class="btn btn-secondary" onclick="changeRange('previous')">Previous</button>
-                                <button id="next-button" class="btn btn-secondary" onclick="changeRange('next')">Next</button>
-                            </div>
-                        {% endif %}
-                    {% endif %}
-                {% endfor %}
-            </div>
+    <div class="container mt-4 myframe align-self-stretch">
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe id="episode-iframe" class="embed-responsive-item" src="{{ urls[0] ~ '-episode-1' }}" allowfullscreen></iframe>
+        </div>
+        <div class="d-flex flex-wrap">
+            {% for episode in urls %}
+            <a href="#" onclick="loadEpisode('{{ episode ~ '-episode-' ~ loop.index }}')" class="mr-2 mb-2">
+                <div class="p-2 bg-danger text-white">{{ loop.index }}</div>
+            </a>
+            {% endfor %}
         </div>
     </div>
-</div>
 
-<script>
-    var episodes = {{ urls|tojson }};
-    var maxRangeIndex = Math.ceil(episodes.length / {{ max_rows * max_columns }});
-    var currentRangeIndex = 0;
-    
-    function loadEpisode(url) {
-        var iframe = document.getElementById('episode-iframe');
-        iframe.src = url;
-    }
-    
-    function changeRange(action) {
-        var buttonGroup = document.getElementById('episode-buttons');
-        
-        if (action === 'previous') {
-            currentRangeIndex = (currentRangeIndex - 1 + maxRangeIndex) % maxRangeIndex;
-        } else if (action === 'next') {
-            currentRangeIndex = (currentRangeIndex + 1) % maxRangeIndex;
+    <script>
+        var episodeIframe = document.getElementById('episode-iframe');
+        var episodes = {{ urls|tojson }};
+        var defaultEpisodeUrl = episodes[0] + '-episode-1';
+
+        function loadEpisode(url) {
+            episodeIframe.src = url;
         }
-        
-        var currentRangeStart = currentRangeIndex * {{ range_size }};
-        var currentRangeEnd = (currentRangeIndex + 1) * {{ range_size }};
-        if (currentRangeEnd > episodes.length) {
-            currentRangeEnd = episodes.length;
-        }
-        
-        for (var i = currentRangeStart; i < currentRangeEnd; i++) {
-            var episodeNumber = i + 1;
-            var episodeUrl = episodes[i];
-            var episodeButton = document.getElementById('episode-number-' + (i - currentRangeStart + 1));
-            episodeButton.innerHTML = episodeNumber;
-            episodeButton.setAttribute('onclick', 'loadEpisode("' + episodeUrl + '")');
-        }
-        
-        // Update previous and next button visibility
-        var previousButton = document.getElementById('previous-button');
-        var nextButton = document.getElementById('next-button');
-        previousButton.style.display = currentRangeIndex === 0 ? 'none' : 'inline-block';
-        nextButton.style.display = currentRangeIndex === maxRangeIndex - 1 ? 'none' : 'inline-block';
-    }
-    
-    // Set default episode URL
-    var defaultEpisodeUrl = episodes[0];
-    loadEpisode(defaultEpisodeUrl);
-</script>
+
+        // Set default episode URL
+        loadEpisode(defaultEpisodeUrl);
+    </script>
 {% endblock %}

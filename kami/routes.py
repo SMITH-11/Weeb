@@ -28,18 +28,20 @@ def know_more(mal_id):
     data = get_anime_details(mal_id)
     image = data['image_url']
     title = data['title']
-    episodes = data['episodes']
-    if episodes is None or episodes == 'None':
-        episodes = 'undefined'
-    else:
-        episodes = int(episodes)
-    return render_template('know_more.html', data=data, img=image, title=title, episodes=episodes)
+    # episodes = data['episodes']
+    episode = main(title)[-1]
+    # if episodes is None or episodes == 'None':
+    #     episodes = 'undefined'
+    # else:
+    #     episodes = int(episodes)
+    # print(episode)
+    return render_template('know_more.html', data=data, img=image, title=title, episodes=episode)
 
 
 @routes.route('/watch/episode', methods=['POST'])
 def watch_episode():
     title = request.form['title']
-    episode = int(request.form.get('episodes'))
-    urls = main(title, episode)
+    # episode = request.form.get('episodes')
+    urls, episode = main(title)
     url = urls[0]
-    return render_template('watch.html', urls=urls, url=url, title=title)
+    return render_template('watch.html', urls=urls, url=url, title=title, episodes = episode)

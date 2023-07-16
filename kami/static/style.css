@@ -71,6 +71,10 @@ body {
   margin-top: 10px;
 }
 
+.myframe{
+  /* float: left; */
+}
+
 @media (max-width: 767px) {
   .card {
     flex: 0 0 calc(33.33% - 20px);
