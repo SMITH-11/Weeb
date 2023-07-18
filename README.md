@@ -65,20 +65,7 @@ For Unix/macOS:
    ```
 6. Open your browser and navigate to http://localhost:5000 to access the Kami website.
 
-5. Install the required dependencies using pip:
-
-   ```shell
-   pip install -r requirements.txt
-   ```
-
-6. Start the Flask application
-
-   ```shell
-   python app.py
-   ```
-
 7. Open your browser and navigate to http://localhost:5000 to access the Kami website.
-
 
 Contributions
 Contributions to Kami are highly appreciated! If you have any ideas, bug fixes, or improvements, please feel free to submit a pull request. Together, let's make Kami the go-to platform for anime streaming.
