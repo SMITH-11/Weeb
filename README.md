@@ -1,29 +1,60 @@
-# kami
+Kami - Anime Streaming Website
+![Kami Logo](my_site/static/logo.png)
 
-Kami is an anime streaming website built using the Flask module of Python. It integrates with the Jikan API V4 to fetch anime data and utilizes a Python scraper built with the BeautifulSoup module to scrape video data. Please note that this project is still in its early stages of development and has been worked on for a duration of 4 days. As a result, the functionality and content may be limited at the moment. However, we have plans to further enhance and improve the website in the near future to provide a better streaming experience for anime lovers.
+Kami is a stylish and immersive anime streaming website built using the Flask module of Python. With a sleek user interface, stunning visuals, and an extensive collection of anime series, Kami offers a premium streaming experience for anime enthusiasts. Powered by the Jikan API V4, Kami provides up-to-date anime data and integrates a Python scraper, built with the BeautifulSoup module, to scrape video information for seamless playback.
 
-## Features
-- Anime search functionality to find information about specific anime titles.
-- Trending anime section displaying the current popular anime series.
-- Detailed anime pages showcasing information such as title, image, synopsis, rating, genre, and more.
-- Watch episodes of anime series using the embedded video player.
+Features
+Anime Search: Find information about your favorite anime titles with our powerful search functionality. Discover detailed descriptions, ratings, genres, and more.
 
-## Technologies Used
-- Python
-- Flask
-- Jikan API V4
-- BeautifulSoup
+Trending Anime: Stay up-to-date with the latest and most popular anime series. Our trending section highlights the hottest shows right now.
 
-## Installation
-1. Clone the repository to your local machine.
-2. Create a virtual environment using a tool like `venv`.
-3. Activate the virtual environment.
-4. Install the required dependencies using the command: `pip install -r requirements.txt`.
-5. Run the Flask application using the command: `python app.py`.
-6. Access the website in your browser at `http://localhost:5000`.
+Detailed Anime Pages: Dive into the world of each anime series with detailed pages that showcase captivating images, captivating synopses, and comprehensive information like ratings, genres, and release dates.
 
-## Contributions
-Contributions to the project are welcome! If you have any ideas, bug fixes, or improvements, feel free to submit a pull request.
+Watch Anime Episodes: Enjoy a smooth and immersive streaming experience directly on Kami. Our embedded video player ensures uninterrupted playback of your favorite episodes.
 
-## License
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+Technologies Used
+Python: The core language used to develop the backend logic and server-side functionality.
+
+Flask: A powerful and flexible web framework for building the web application and handling requests.
+
+Jikan API V4: An API that provides access to comprehensive anime data, including titles, descriptions, ratings, genres, and more.
+
+BeautifulSoup: A Python library for web scraping, used to extract video information from various sources.
+
+Installation
+Clone the repository to your local machine using the command: git clone https://github.com/your-username/kami.git
+
+Create a virtual environment to isolate the project's dependencies.
+
+shell
+Copy code
+python3 -m venv kami-env
+Activate the virtual environment.
+
+For Windows:
+
+shell
+Copy code
+kami-env\Scripts\activate.bat
+For Unix/macOS:
+
+shell
+Copy code
+source kami-env/bin/activate
+Install the required dependencies using pip.
+
+shell
+Copy code
+pip install -r requirements.txt
+Start the Flask application.
+
+shell
+Copy code
+flask run
+Open your browser and navigate to http://localhost:5000 to access the Kami website.
+
+Contributions
+Contributions to Kami are highly appreciated! If you have any ideas, bug fixes, or improvements, please feel free to submit a pull request. Together, let's make Kami the go-to platform for anime streaming.
+
+License
+This project is licensed under the MIT License. Feel free to use, modify, and distribute the code according to the terms of the license.
