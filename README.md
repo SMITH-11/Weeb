@@ -56,10 +56,10 @@ For Unix/macOS:
    ```
 6. Open your browser and navigate to http://localhost:5000 to access the Kami website.
 
-##Contributions
+## Contributions
 
 Contributions to Kami are highly appreciated! If you have any ideas, bug fixes, or improvements, please feel free to submit a pull request. Together, let's make Kami the go-to platform for anime streaming.
 
-##License
+## License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use, modify, and distribute the code according to the terms of the license.
