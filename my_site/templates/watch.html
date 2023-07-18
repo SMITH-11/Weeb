@@ -6,13 +6,13 @@
         <div class="embed-responsive embed-responsive-16by9">
             <iframe id="episode-iframe" class="embed-responsive-item" src="{{ urls[0] ~ '-episode-1' }}" allowfullscreen></iframe>
         </div>
-        <div class="d-flex flex-wrap">
+        <div class="d-flex flex-wrap episode-container">
             {% for episode in urls %}
-            <a href="#" onclick="loadEpisode('{{ episode ~ '-episode-' ~ loop.index }}')" class="mr-2 mb-2">
-                <div class="p-2 bg-danger text-white">{{ loop.index }}</div>
+            <a href="#" onclick="loadEpisode('{{ episode ~ '-episode-' ~ loop.index }}')" class="mr-2 mb-2 episode-button">
+              <div class="p-2 bg-muted text-white">{{ loop.index }}</div>
             </a>
             {% endfor %}
-        </div>
+          </div>
     </div>
 
     <script>

@@ -29,6 +29,7 @@ def know_more(mal_id):
     image = data['image_url']
     title = data['title']
     # episodes = data['episodes']
+    # engTitle = data['nameEng']
     episode = main(title)[-1]
     # if episodes is None or episodes == 'None':
     #     episodes = 'undefined'

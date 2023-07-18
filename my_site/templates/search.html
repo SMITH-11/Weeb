@@ -8,10 +8,10 @@
   {% for index in range(data.thumbnail|length) %}
   <div class="card">
     <a href="{{ url_for('routes.know_more', mal_id=data.mal_id[index]) }}">
-      <img src="{{ data.thumbnail[index] }}" class="card-img-top" alt="{{ data.nameEng[index] }}">
+      <img src="{{ data.thumbnail[index] }}" class="card-img-top" alt="{{ data.title[index] }}">
     <a/>
       <div class="card-body">
-        <h5 class="card-title">{{ data.nameEng[index] }}</h5>
+        <h5 class="card-title">{{ data.title[index] }}</h5>
         <p class="card-text">{{ data.type[index] }}</p>
         <p class="card-text">Duration: {{ data.duration[index] }}</p>
       </div>

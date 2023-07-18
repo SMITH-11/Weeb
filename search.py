@@ -23,11 +23,13 @@ def searchAnime(name):
   description = []
   genres = []
   trailer_embed_url = []
+  title = []
 
   for anime in anime_list:
     mal_id.append(anime["mal_id"])
     image = anime["images"]["webp"]["image_url"]
     thumbnail.append(image)
+    title.append(anime["title"])
     name_eng.append(anime["title_english"])
     name_jap.append(anime["title_japanese"])
     name_syn.append(anime.get("title_synonyms", []))
@@ -49,6 +51,7 @@ def searchAnime(name):
   return {
     "mal_id": mal_id,
     "thumbnail": thumbnail,
+    "title": title,
     "nameEng": name_eng,
     "nameJap": name_jap,
     "name_syn": name_syn,
