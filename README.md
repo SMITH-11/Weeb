@@ -1,57 +1,57 @@
-Kami - Anime Streaming Website
+# Kami - Anime Streaming Website
+
 ![Kami Logo](https://github.com/NikhilRajbhar111/kami/blob/master/my_site/static/kami.png)
 
 Kami is a stylish and immersive anime streaming website built using the Flask module of Python. With a sleek user interface, stunning visuals, and an extensive collection of anime series, Kami offers a premium streaming experience for anime enthusiasts. Powered by the Jikan API V4, Kami provides up-to-date anime data and integrates a Python scraper, built with the BeautifulSoup module, to scrape video information for seamless playback.
 
-Features
-Anime Search: Find information about your favorite anime titles with our powerful search functionality. Discover detailed descriptions, ratings, genres, and more.
+## Features
 
-Trending Anime: Stay up-to-date with the latest and most popular anime series. Our trending section highlights the hottest shows right now.
+- **Anime Search**: Find information about your favorite anime titles with our powerful search functionality. Discover detailed descriptions, ratings, genres, and more.
 
-Detailed Anime Pages: Dive into the world of each anime series with detailed pages that showcase captivating images, captivating synopses, and comprehensive information like ratings, genres, and release dates.
+- **Trending Anime**: Stay up-to-date with the latest and most popular anime series. Our trending section highlights the hottest shows right now.
 
-Watch Anime Episodes: Enjoy a smooth and immersive streaming experience directly on Kami. Our embedded video player ensures uninterrupted playback of your favorite episodes.
+- **Detailed Anime Pages**: Dive into the world of each anime series with detailed pages that showcase captivating images, captivating synopses, and comprehensive information like ratings, genres, and release dates.
 
-Technologies Used
-Python: The core language used to develop the backend logic and server-side functionality.
+- **Watch Anime Episodes**: Enjoy a smooth and immersive streaming experience directly on Kami. Our embedded video player ensures uninterrupted playback of your favorite episodes.
 
-Flask: A powerful and flexible web framework for building the web application and handling requests.
+## Technologies Used
 
-Jikan API V4: An API that provides access to comprehensive anime data, including titles, descriptions, ratings, genres, and more.
+- **Python**: The core language used to develop the backend logic and server-side functionality.
 
-BeautifulSoup: A Python library for web scraping, used to extract video information from various sources.
+- **Flask**: A powerful and flexible web framework for building the web application and handling requests.
 
-Installation
-Clone the repository to your local machine using the command: git clone https://github.com/your-username/kami.git
+- **Jikan API V4**: An API that provides access to comprehensive anime data, including titles, descriptions, ratings, genres, and more.
 
-Create a virtual environment to isolate the project's dependencies.
+- **BeautifulSoup**: A Python library for web scraping, used to extract video information from various sources.
 
-shell
-Copy code
-python3 -m venv kami-env
-Activate the virtual environment.
+## Installation
 
-For Windows:
+1. Clone the repository to your local machine using the command: `git clone https://github.com/your-username/kami.git`
 
-shell
-Copy code
-kami-env\Scripts\activate.bat
-For Unix/macOS:
+2. Create a virtual environment to isolate the project's dependencies:
 
-shell
-Copy code
-source kami-env/bin/activate
-Install the required dependencies using pip.
+   ```shell
+   python3 -m venv kami-env
 
-shell
-Copy code
-pip install -r requirements.txt
-Start the Flask application.
+3. Activate the virtual enviroment
+   For windows:
+   ```shell
+   kami-env\Scripts\activate.bat
+   
+   For Unix/macOS:
+   ```shell
+   source kami-env/bin/activate
 
-shell
-Copy code
-flask run
-Open your browser and navigate to http://localhost:5000 to access the Kami website.
+4. Install the required dependencies using pip:
+   ```shell
+   pip install -r requirements.txt
+
+5. Start the Flask application
+   ```shell
+   python app.py
+
+6. Open your browser and navigate to http://localhost:5000 to access the Kami website.
+
 
 Contributions
 Contributions to Kami are highly appreciated! If you have any ideas, bug fixes, or improvements, please feel free to submit a pull request. Together, let's make Kami the go-to platform for anime streaming.
