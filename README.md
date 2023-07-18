@@ -1,5 +1,5 @@
 Kami - Anime Streaming Website
-![Kami Logo](my_site/static/logo.png)
+![Kami Logo](https://github.com/NikhilRajbhar111/kami/blob/master/my_site/static/kami.png)
 
 Kami is a stylish and immersive anime streaming website built using the Flask module of Python. With a sleek user interface, stunning visuals, and an extensive collection of anime series, Kami offers a premium streaming experience for anime enthusiasts. Powered by the Jikan API V4, Kami provides up-to-date anime data and integrates a Python scraper, built with the BeautifulSoup module, to scrape video information for seamless playback.
 
