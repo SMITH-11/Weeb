@@ -1,4 +1,4 @@
-from kami import create_app
+from my_site import create_app
 
 app = create_app()
 
