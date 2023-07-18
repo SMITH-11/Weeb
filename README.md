@@ -34,23 +34,27 @@ Kami is a stylish and immersive anime streaming website built using the Flask mo
    python3 -m venv kami-env
 
 3. Activate the virtual enviroment
-   For windows:
+For windows:
+   
    ```shell
    kami-env\Scripts\activate.bat
    
-   For Unix/macOS:
+For Unix/macOS:
+   
    ```shell
    source kami-env/bin/activate
 
-4. Install the required dependencies using pip:
+5. Install the required dependencies using pip:
+
    ```shell
    pip install -r requirements.txt
 
-5. Start the Flask application
+6. Start the Flask application
+
    ```shell
    python app.py
 
-6. Open your browser and navigate to http://localhost:5000 to access the Kami website.
+7. Open your browser and navigate to http://localhost:5000 to access the Kami website.
 
 
 Contributions
