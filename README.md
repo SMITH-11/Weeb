@@ -24,7 +24,7 @@ Kami is a stylish and immersive anime streaming website built using the Flask mo
 - **[Jikan API V4](https://jikan.moe)**: An API that provides access to comprehensive anime data, including titles, descriptions, ratings, genres, and more.
 
 - **[BeautifulSoup](https://pypi.org/project/beautifulsoup4/)**: A Python library for web scraping, used to extract video information from various sources.
-=======
+
 - **Python**: The core language used to develop the backend logic and server-side functionality.
 
 - **Flask**: A powerful and flexible web framework for building the web application and handling requests.
@@ -32,7 +32,7 @@ Kami is a stylish and immersive anime streaming website built using the Flask mo
 - **Jikan API V4**: An API that provides access to comprehensive anime data, including titles, descriptions, ratings, genres, and more.
 
 - **BeautifulSoup**: A Python library for web scraping, used to extract video information from various sources.
->>>>>>> edbe989cbb1eea982d028e01943e49999ad4af07
+
 
 ## Installation
 
@@ -42,52 +42,43 @@ Kami is a stylish and immersive anime streaming website built using the Flask mo
 
    ```shell
    python3 -m venv kami-env
-<<<<<<< HEAD
-```
-=======
-
->>>>>>> edbe989cbb1eea982d028e01943e49999ad4af07
+  ```
 3. Activate the virtual enviroment
 For windows:
    
    ```shell
    kami-env\Scripts\activate.bat
-<<<<<<< HEAD
-   ```
-=======
-   
->>>>>>> edbe989cbb1eea982d028e01943e49999ad4af07
+  ```
 For Unix/macOS:
    
    ```shell
    source kami-env/bin/activate
-<<<<<<< HEAD
-```
+  ```
 4. Install the required dependencies using pip:
 
    ```shell
    pip install -r requirements.txt
-```
+  ```
 5. Start the Flask application
 
    ```shell
    python app.py
-```
+  ```
 6. Open your browser and navigate to http://localhost:5000 to access the Kami website.
-=======
 
 5. Install the required dependencies using pip:
 
    ```shell
    pip install -r requirements.txt
+  ```
 
 6. Start the Flask application
 
    ```shell
    python app.py
+  ```
 
 7. Open your browser and navigate to http://localhost:5000 to access the Kami website.
->>>>>>> edbe989cbb1eea982d028e01943e49999ad4af07
 
 
 Contributions
@@ -96,6 +87,3 @@ Contributions to Kami are highly appreciated! If you have any ideas, bug fixes, 
 License
 <<<<<<< HEAD
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use, modify, and distribute the code according to the terms of the license.
-=======
-This project is licensed under the MIT License. Feel free to use, modify, and distribute the code according to the terms of the license.
->>>>>>> edbe989cbb1eea982d028e01943e49999ad4af07
