@@ -16,7 +16,6 @@ Kami is a stylish and immersive anime streaming website built using the Flask mo
 
 ## Technologies Used
 
-<<<<<<< HEAD
 - **[Python](https://www.python.org/downloads/)**: The core language used to develop the backend logic and server-side functionality.
 
 - **[Flask](https://pypi.org/project/Flask/)**: A powerful and flexible web framework for building the web application and handling requests.
@@ -85,5 +84,4 @@ Contributions
 Contributions to Kami are highly appreciated! If you have any ideas, bug fixes, or improvements, please feel free to submit a pull request. Together, let's make Kami the go-to platform for anime streaming.
 
 License
-<<<<<<< HEAD
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use, modify, and distribute the code according to the terms of the license.
