@@ -39,7 +39,7 @@ For windows:
    ```shell
    kami-env\Scripts\activate.bat
    ```
-  For Unix/macOS:
+   For Unix/macOS:
    
    ```shell
    source kami-env/bin/activate
