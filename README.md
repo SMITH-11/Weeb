@@ -39,7 +39,11 @@ For windows:
    ```shell
    kami-env\Scripts\activate.bat
    ```
+<<<<<<< HEAD
 For Unix/macOS:
+=======
+   For Unix/macOS:
+>>>>>>> 6d70889e4b1b7d20859034d28ccdbd73680fc3bc
    
    ```shell
    source kami-env/bin/activate
@@ -56,6 +60,7 @@ For Unix/macOS:
    ```
 6. Open your browser and navigate to http://localhost:5000 to access the Kami website.
 
+<<<<<<< HEAD
 ##Contributions
 
 Contributions to Kami are highly appreciated! If you have any ideas, bug fixes, or improvements, please feel free to submit a pull request. Together, let's make Kami the go-to platform for anime streaming.
@@ -63,3 +68,12 @@ Contributions to Kami are highly appreciated! If you have any ideas, bug fixes, 
 ##License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use, modify, and distribute the code according to the terms of the license.
+=======
+## Contributions
+
+Contributions to Kami are highly appreciated! If you have any ideas, bug fixes, or improvements, please feel free to submit a pull request. Together, let's make Kami the go-to platform for anime streaming.
+
+## License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use, modify, and distribute the code according to the terms of the license.
+>>>>>>> 6d70889e4b1b7d20859034d28ccdbd73680fc3bc
