@@ -1,23 +1,17 @@
 {% extends 'base.html' %}
-{% block title %}{{ title }}{% endblock %}
-
-
+{% block title %}Search Results{% endblock %}
 
 {% block content %}
 <div class="container">
-  {% for index in range(data.thumbnail|length) %}
+  {% for item in data %}
   <div class="card">
-    <a href="{{ url_for('routes.know_more', mal_id=data.mal_id[index]) }}">
-      <img src="{{ data.thumbnail[index] }}" class="card-img-top" alt="{{ data.title[index] }}">
-    <a/>
-      <div class="card-body">
-        <h5 class="card-title">{{ data.title[index] }}</h5>
-        <p class="card-text">{{ data.type[index] }}</p>
-        <p class="card-text">Duration: {{ data.duration[index] }}</p>
-      </div>
+    <a href="{{ url_for('routes.category', title=item['link']) }}">
+      <img src="{{ item['image'] }}" class="card-img-top" alt="{{ item['name'] }}">
+    </a>
+    <div class="card-body">
+      <h5 class="card-title">{{ item['name'] }}</h5>
+    </div>
   </div>
   {% endfor %}
 </div>
-
 {% endblock %}
-

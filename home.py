@@ -15,10 +15,11 @@ def scrape_page(url):
             
             # Extract the modified card_link
             card_link = image_link.replace("https://gogocdn.net/cover/", "").replace('.png', '')
+            card_link = image_link.replace("https://gogocdn.net/images/anime/N/", "").replace('.png', '').replace('.jpg', '')
             # print(card_link)
             if card_link.rsplit('-', 1)[-1].isnumeric():
                 card_link = card_link.rsplit('-', 1)[0]  # Removed the ".pop"
-            print(card_link)
+            # print(card_link)
             
             
             anime_data = {"title": title, "image": image_link, "card_link": card_link}
