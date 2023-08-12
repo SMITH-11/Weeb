@@ -1,48 +1,31 @@
-from flask import Blueprint, render_template, request
-from trending import get_trending_data
-from search import searchAnime
-from detail import get_anime_details
-from freak import main
+from flask import Blueprint, render_template, flash, redirect, url_for
+from home import get_home_data
+from detail import scrape_category_details  # Make sure to provide the correct import path
+from stream import get_stream_url
 
 routes = Blueprint('routes', __name__)
 
 @routes.route('/')
 @routes.route('/home')
 def home():
-    return render_template('home.html')
+    data = get_home_data(pages=2)
+    return render_template('home.html', data=data)
 
-@routes.route('/search', methods=['GET', 'POST'])
-def search():
-    name = request.form['myform']
-    data = searchAnime(name)
-    return render_template('search.html', data=data, title=name)
+@routes.route('/category/<title>')
+def category(title):
+    anime_data = scrape_category_details(title)
+    if anime_data:
+        return render_template('detail.html', anime_data=anime_data)
+    else:
+        flash("An error occurred while fetching data from the category page.")
+        return redirect(url_for('routes.home'))
 
-
-@routes.route('/trending')
-def trending():
-    trending_data = get_trending_data()
-    return render_template('trending.html', data=trending_data)
-
-@routes.route('/anime/<int:mal_id>')
-def know_more(mal_id):
-    data = get_anime_details(mal_id)
-    image = data['image_url']
-    title = data['title']
-    # episodes = data['episodes']
-    # engTitle = data['nameEng']
-    episode = main(title)[-1]
-    # if episodes is None or episodes == 'None':
-    #     episodes = 'undefined'
-    # else:
-    #     episodes = int(episodes)
-    # print(episode)
-    return render_template('know_more.html', data=data, img=image, title=title, episodes=episode)
-
-
-@routes.route('/watch/episode', methods=['POST'])
-def watch_episode():
-    title = request.form['title']
-    # episode = request.form.get('episodes')
-    urls, episode = main(title)
-    url = urls[0]
-    return render_template('watch.html', urls=urls, url=url, title=title, episodes = episode)
+@routes.route('/stream/<title>')
+def stream(title):
+    stream_url = get_stream_url(title)
+    
+    if stream_url:
+        return render_template('stream.html', stream_url=stream_url, title=title)
+    else:
+        flash("An error occurred while fetching the stream URL.")
+        return redirect(url_for('routes.home'))

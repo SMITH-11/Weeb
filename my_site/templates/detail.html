@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}{{ anime_data.anime_name }} Details{% endblock %}
+
+{% block content %}
+<div class="container text-white">
+  <div class="img mb-4">
+    <img src="{{ anime_data.img }}" alt="{{ anime_data.anime_name }}">
+  </div>
+  <h1 class="mb-3">{{ anime_data.anime_name }}</h1>
+  <p><strong>Type:</strong> {{ anime_data.Name }}</p>
+  <p><strong>Plot:</strong> {{ anime_data.Plot }}</p>
+  <p><strong>Genre:</strong> {{ anime_data.Genre }}</p>
+  <p><strong>Released:</strong> {{ anime_data.Released }}</p>
+  <p><strong>Status:</strong> {{ anime_data.Status }}</p>
+  <p><strong>Other Name:</strong> {{ anime_data.Other_Name }}</p>
+</div>
+{% endblock %}
