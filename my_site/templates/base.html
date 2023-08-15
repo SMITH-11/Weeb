@@ -23,7 +23,7 @@
       {% endblock %}
     </title>
   </head>
-  <body style="background-image:{{img}})">
+  <body>
     <nav class="navbar navbar-expand-lg navbar-dark mynav fixed-top">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
         <span class="navbar-toggler-icon"></span>
@@ -47,7 +47,7 @@
     <br/>
     <div class="mt-5">
       {% block content %}
-      {{ super() }}
+     {{super()}}
       {% endblock %}
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

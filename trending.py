@@ -24,7 +24,7 @@ def scrape(url):
         print(f"An error occurred: {e}")
         return "[]"
 
-def get_popular_data(total_pages=3):
+def get_popular_data(total_pages=1):
     all_data = []
     base_url = "https://www4.gogoanimes.fi/popular.html"
     for i in range(1, total_pages + 1):
