@@ -4,8 +4,9 @@ from urllib.parse import quote
 
 def get_stream_url(title):
     name = quote(title.replace(" ", '-').replace("(", '').replace(")", '').replace(":", ''))
-    base_url = f"https://www4.gogoanimes.fi/{name}-episode-1"
+    base_url = f"https://www4.gogoanimes.fi/{name}"
     response = requests.get(base_url)
+    print(base_url)
     
     if response.status_code == 200:
         soup = BeautifulSoup(response.content, 'html.parser')

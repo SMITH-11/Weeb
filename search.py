@@ -30,7 +30,7 @@ def get_search_data(anime_name):
                                       anime_container.find_all('div', class_="img")):
                 name = title_div.find('a').text.strip()
                 image_src = image_div.find("img")["src"]
-                card_link = card.find('a')["href"].replace("/category/", '')
+                card_link = card.find('a')["href"].replace("/category", '')
                 anime_data.append({"name": name, "image": image_src, "link": card_link})
     else:
         anime_container = soup.find("div", class_="last_episodes")

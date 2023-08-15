@@ -1,17 +1,25 @@
 {% extends 'base.html' %}
-{% block title %}{{ anime_data.anime_name }} Details{% endblock %}
+{% block title %}Detail{% endblock %}
 
 {% block content %}
-<div class="container text-white">
-  <div class="img mb-4">
-    <img src="{{ anime_data.img }}" alt="{{ anime_data.anime_name }}">
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="{{ anime_data.img }}" alt="{{ anime_data.anime_name }}" class="img-fluid">
+      <div class="buy d-flex justify-content-between align-items-center">
+        <a href="{{ url_for('routes.stream', title=anime_data.ep_url) }}" class="btn btn-danger mt-3"><i class="bi bi-play"></i> Watch Now</a>
+      </div>
+    </div>
+    <div class="col-md-8 text-white">
+      <h2>{{ anime_data.anime_name }}</h2>
+      <p><strong>Name:</strong> {{ anime_data.Name }}</p>
+      <p><strong>Plot:</strong> {{ anime_data.Plot }}</p>
+      <p><strong>Genre:</strong> {{ anime_data.Genre }}</p>
+      <p><strong>Released:</strong> {{ anime_data.Released }}</p>
+      <p><strong>Status:</strong> {{ anime_data.Status }}</p>
+      <p><strong>Other Name:</strong> {{ anime_data.Other_Name }}</p>
+      <p><strong>Total episodes:</strong> {{ anime_data.Last_Episode_Number }}</p>
+    </div>
   </div>
-  <h1 class="mb-3">{{ anime_data.anime_name }}</h1>
-  <p><strong>Type:</strong> {{ anime_data.Name }}</p>
-  <p><strong>Plot:</strong> {{ anime_data.Plot }}</p>
-  <p><strong>Genre:</strong> {{ anime_data.Genre }}</p>
-  <p><strong>Released:</strong> {{ anime_data.Released }}</p>
-  <p><strong>Status:</strong> {{ anime_data.Status }}</p>
-  <p><strong>Other Name:</strong> {{ anime_data.Other_Name }}</p>
 </div>
 {% endblock %}

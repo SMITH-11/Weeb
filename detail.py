@@ -21,6 +21,18 @@ def scrape_category_details(title):
         Status = anime_details[5].find("a").text
         Other_Name = anime_details[6].text.replace("Other name: ", "")
 
+        # Extract last episode info
+        episode_detail = soup.find("div", class_="anime_video_body")
+        last_episode = episode_detail.find_all("li")
+
+        ls_count = len(last_episode)
+        # print(ls_count)
+        last_item = last_episode[ls_count-1].find("a")["ep_end"]
+        # print(last_item)
+        last_episode_number = last_item
+        # print(last_episode_number)
+        ep_url = f"{anime_name}-episode-1".replace(" ", '-').replace(":", "").replace(".", "").replace("(", "").replace(")", "").lower()
+        print(ep_url)
         anime_data = {
             "img": img,
             "anime_name": anime_name,
@@ -29,7 +41,10 @@ def scrape_category_details(title):
             "Genre": Genre,
             "Released": Released,
             "Status": Status,
-            "Other_Name": Other_Name
+            "Other_Name": Other_Name,
+            "Last_Episode_Number": last_episode_number,
+            "ep_url":ep_url
+            # "Last_Episode_URL": last_episode_href
         }
 
         return anime_data
