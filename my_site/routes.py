@@ -3,6 +3,7 @@ from home import get_home_data
 from detail import scrape_category_details  # Make sure to provide the correct import path
 from search import get_search_data
 from stream import get_stream_url
+from trending import get_popular_data
 
 routes = Blueprint('routes', __name__)
 
@@ -38,3 +39,10 @@ def search():
         anime_data = get_search_data(anime_name)
         return render_template("search.html", data=anime_data)  # Use your existing template
     return redirect(url_for("routes.home"))  # Redirect to home if GET request
+
+
+@routes.route("/trending")
+def trending():
+    data=get_popular_data(1)
+    # print(data)
+    return render_template("trending.html",data=data)
