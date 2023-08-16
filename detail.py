@@ -31,7 +31,7 @@ def scrape_category_details(title):
         # print(last_item)
         last_episode_number = last_item
         # print(last_episode_number)
-        ep_url = f"{anime_name}-episode-1".replace(" ", '-').replace(":", "").replace(".", "").replace("(", "").replace(")", "").lower()
+        ep_url = f"{anime_name}-episode-1".replace(" ", '-').replace(":", "").replace(".", "").replace("(", "").replace(")", "").replace(",", "").replace('"', "").replace("!", "").replace("☆", "").replace("---", "-").lower()
         print(ep_url)
         anime_data = {
             "img": img,
