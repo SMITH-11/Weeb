@@ -14,7 +14,12 @@
       <h2>{{ anime_data.anime_name }}</h2>
       <p><strong>Name:</strong> {{ anime_data.Name }}</p>
       <p><strong>Plot:</strong> {{ anime_data.Plot }}</p>
-      <p><strong>Genre:</strong> {{ anime_data.Genre }}</p>
+      <p><strong>Genre:</strong>
+        {% for genre in anime_data.Genre %}
+          {{ genre }}
+          {% if not loop.last %}| {% endif %}
+        {% endfor %}
+      </p>
       <p><strong>Released:</strong> {{ anime_data.Released }}</p>
       <p><strong>Status:</strong> {{ anime_data.Status }}</p>
       <p><strong>Other Name:</strong> {{ anime_data.Other_Name }}</p>
