@@ -5,6 +5,7 @@ from urllib.parse import quote
 def get_stream_url(title):
     name = quote(title.replace(" ", '-').replace("(", '').replace(")", '').replace(":", ''))
     base_url = f"https://www4.gogoanimes.fi/{name}"
+    # print(base_url)
     response = requests.get(base_url)
     print(base_url)
     

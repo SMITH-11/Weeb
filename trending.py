@@ -47,6 +47,13 @@ def get_popular_data(total_pages=1):
         all_data.extend(json.loads(data))  # Append the data from each page to the list
     return all_data
 
+def get_carousel_data():
+    data = get_popular_data()
+    carousel_data = []
+    for i in range(0,5,1):
+        carousel_data.append(data[i])
+    return carousel_data
+
 if __name__ == "__main__":
     all_data_json = get_popular_data(1)
-    print(all_data_json)
+    # print(all_data_json)

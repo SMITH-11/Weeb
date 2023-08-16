@@ -11,6 +11,8 @@ routes = Blueprint('routes', __name__)
 @routes.route('/home')
 def home():
     data = get_home_data(pages=2)
+    # carousel_data = get_carousel_data()
+    # print(carousel_data)
     return render_template('home.html', data=data)
 
 @routes.route('/category/<title>')

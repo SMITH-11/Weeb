@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 def scrape_category_details(title):
     # title_formatted = title.replace("-", " ").title()
     url = f"https://www4.gogoanimes.fi/category/{title}"
-    print(url)
+    # print(url)
     
     response = requests.get(url)
     if response.status_code == 200:
@@ -35,8 +35,13 @@ def scrape_category_details(title):
         # print(last_item)
         last_episode_number = last_item
         # print(last_episode_number)
-        ep_url = f"{anime_name}-episode-1".replace(" ", '-').replace(":", "").replace(".", "").replace("(", "").replace(")", "").replace(",", "").replace('"', "").replace("!", "").replace("☆", "").replace("---", "-").lower()
-        print(ep_url)
+        card_link = img.replace("https://gogocdn.net/cover/", "").replace('.png', '').replace('.jpg', '').replace('https://gogocdn.net/images/anime/N/', '').replace("https://gogocdn.net/images/anime/", '')
+        if card_link.rsplit('-', 1)[-1].isnumeric():
+            card_link = card_link.rsplit('-', 1)[0]
+        # verify_link = requests.get(f"https://www4.gogoanimes.fi/{card_link}")
+        ep_url = card_link+"-episode-1"
+        # ep_url = f"{anime_name}-episode-1".replace(" ", '-').replace(":", "").replace(".", "").replace("(", "").replace(")", "").replace(",", "").replace('"', "").replace("!", "").replace("☆", "").replace("---", "-").lower()
+        # print(ep_url)
         anime_data = {
             "img": img,
             "anime_name": anime_name,
@@ -55,5 +60,5 @@ def scrape_category_details(title):
     else:
         return None
 
-data = scrape_category_details("naruto")
-print(data)
+# data = scrape_category_details("naruto")
+# print(data)
