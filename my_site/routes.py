@@ -3,17 +3,18 @@ from home import get_home_data
 from detail import scrape_category_details  # Make sure to provide the correct import path
 from search import get_search_data
 from stream import get_stream_url
-from trending import get_popular_data
+from trending import get_popular_data, get_carousel_data
 
 routes = Blueprint('routes', __name__)
 
 @routes.route('/')
 @routes.route('/home')
 def home():
-    data = get_home_data(pages=2)
-    # carousel_data = get_carousel_data()
+    data = get_home_data(pages=1)
+    carousel_data = get_carousel_data()
+    # print(data)
     # print(carousel_data)
-    return render_template('home.html', data=data)
+    return render_template('home.html', data=data, carousel_data=carousel_data)
 
 @routes.route('/category/<title>')
 def category(title):

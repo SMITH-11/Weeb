@@ -1,6 +1,8 @@
+
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -24,38 +26,36 @@ body {
 }
 
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: calc(100% + 20px);
-  margin: 0 0px;
+  max-width: 1518px;
+  margin: 0 auto;
 }
 
-.card {
+.card,
+.scrolling-card {
   flex: 0 0 calc(14.2857% - 20px);
   margin: 10px;
   background-color: #000;
   border-radius: 5px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
-
-.card-img-container {
+.card .card-img-container,
+.scrolling-card .card-img-container {
   max-height: 200px;
   overflow: hidden;
   border-radius: 5px 5px 0 0;
 }
-
-.card-img-top {
+.card .card-img-top,
+.scrolling-card .card-img-top {
   width: 100%;
   height: auto;
 }
-
-.card-body {
+.card .card-body,
+.scrolling-card .card-body {
   padding: 10px;
   color: white;
 }
-
-.card-title {
+.card .card-title,
+.scrolling-card .card-title {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 5px;
@@ -63,19 +63,11 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-.card-text {
+.card .card-text,
+.scrolling-card .card-text {
   font-size: 14px;
   color: #fff;
   margin-bottom: 5px;
-}
-
-.mal-link {
-  display: block;
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
-  margin-top: 10px;
 }
 
 .episode-button {
@@ -92,22 +84,68 @@ body {
   text-decoration: none;
 }
 
-.episode-container {
-  height: 300px;
-  overflow: auto;
+/* Customizing the scrollbar for scrolling-wrapper */
+/* Customizing the scrollbar for scrolling-wrapper */
+.scrolling-wrapper {
+  display: flex;
+  overflow-x: scroll;
+  gap: 20px;
+  padding-bottom: 20px;
 }
 
-.multi-line-title {
-  white-space: normal;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* Number of lines to show */
-  -webkit-box-orient: vertical;
+/* Customizing the scrollbar for Webkit (Chrome, Safari) */
+.scrolling-wrapper::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
 }
 
-@media (max-width: 767px) {
-  .card {
-    flex: 0 0 calc(33.33% - 20px);
-  }
+.scrolling-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 0, 0); /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners */
 }
+
+.scrolling-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 0, 0, 0.888); /* Color of the thumb on hover */
+}
+
+.scrolling-wrapper::-webkit-scrollbar-track {
+  background-color: #333333; /* Color of the scrollbar track */
+}
+
+/* Customizing the scrollbar for Firefox */
+.scrolling-wrapper {
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: rgb(255,0,0) #333333; /* Thumb and track color */
+}
+
+
+.scrolling-card {
+  flex: 0 0 auto;
+  width: 220px;
+}
+
+.recommendation-wrapper {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 20px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -175px;
+}
+.col-6 {
+  flex: 0 0 50%;
+  padding-right: 10px;
+  width: 50%;
+}
+
+.col-3 {
+  flex: 0 0 25%;
+  max-width: 15%; /* Adjusted max-width to 50% for mobile view */
+}
+
+.recommendation-wrapper .row {
+  margin-bottom: 20px;
+}
+
+/* Media query */
