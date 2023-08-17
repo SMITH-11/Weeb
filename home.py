@@ -36,7 +36,7 @@ def get_home_data(pages=10):
     base_url = "https://www4.gogoanimes.fi/?page="
     all_data = []
 
-    for page_number in range(0, pages + 1):
+    for page_number in range(1, pages + 1):
         page_url = base_url + str(page_number)
         data = scrape_page(page_url)
         all_data.extend(data)

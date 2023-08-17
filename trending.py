@@ -50,7 +50,7 @@ def get_popular_data(total_pages=1):
 def get_carousel_data():
     data = get_popular_data()
     carousel_data = []
-    for i in range(0,5,1):
+    for i in range(0,10,1):
         carousel_data.append(data[i])
     return carousel_data
 
