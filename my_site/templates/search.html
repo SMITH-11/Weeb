@@ -2,16 +2,20 @@
 {% block title %}Search Results{% endblock %}
 
 {% block content %}
-<div class="container">
-  {% for item in data %}
-  <div class="card">
-    <a href="{{ url_for('routes.category', title=item['link']) }}">
-      <img src="{{ item['image'] }}" class="card-img-top" alt="{{ item['name'] }}">
-    </a>
-    <div class="card-body">
-      <p class="card-title font-weight-light multi-line-title">{{ item['name'] }}</p>
+<div class="container card-container">
+  <div class="row">
+    {% for item in data %}
+    <div class="col-3 col-md-2">
+      <div class="card myCard">
+        <a href="{{ url_for('routes.category', title=item['link']) }}">
+          <img src="{{ item['image'] }}" class="card-img" alt="{{ item['name'] }}">
+        </a>
+        <div class="card-body">
+          <p class="card-title font-weight-light multi-line-title">{{ item['name'] }}</p>
+        </div>
+      </div>
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
 </div>
 {% endblock %}
