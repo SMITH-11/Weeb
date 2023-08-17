@@ -1,7 +1,5 @@
-
+/* Default styles */
 * {
-  padding: 0;
-  margin: 0;
   box-sizing: border-box;
 }
 
@@ -27,33 +25,28 @@ body {
 
 .container {
   max-width: 1518px;
-  margin: 0 auto;
 }
 
 .card,
 .scrolling-card {
-  flex: 0 0 calc(14.2857% - 20px);
   margin: 10px;
   background-color: #000;
   border-radius: 5px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
+
 .card .card-img-container,
 .scrolling-card .card-img-container {
-  max-height: 200px;
   overflow: hidden;
   border-radius: 5px 5px 0 0;
 }
-.card .card-img-top,
-.scrolling-card .card-img-top {
-  width: 100%;
-  height: auto;
-}
+
 .card .card-body,
 .scrolling-card .card-body {
   padding: 10px;
   color: white;
 }
+
 .card .card-title,
 .scrolling-card .card-title {
   font-size: 16px;
@@ -63,6 +56,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .card .card-text,
 .scrolling-card .card-text {
   font-size: 14px;
@@ -71,9 +65,6 @@ body {
 }
 
 .episode-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 50px;
   height: 50px;
   text-decoration: none;
@@ -85,67 +76,61 @@ body {
 }
 
 /* Customizing the scrollbar for scrolling-wrapper */
-/* Customizing the scrollbar for scrolling-wrapper */
 .scrolling-wrapper {
   display: flex;
   overflow-x: scroll;
   gap: 20px;
   padding-bottom: 20px;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: rgba(2, 255, 230) transparent; 
 }
 
-/* Customizing the scrollbar for Webkit (Chrome, Safari) */
 .scrolling-wrapper::-webkit-scrollbar {
-  width: 6px; /* Width of the scrollbar */
+  width: 15px;
 }
-
+ 
 .scrolling-wrapper::-webkit-scrollbar-thumb {
-  background-color: rgb(255, 0, 0); /* Color of the scrollbar thumb */
-  border-radius: 4px; /* Rounded corners */
-}
-
-.scrolling-wrapper::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 0, 0, 0.888); /* Color of the thumb on hover */
+  background: rgb(255, 255, 255);
+  border-radius: 8px; /* Added border-radius */
 }
 
 .scrolling-wrapper::-webkit-scrollbar-track {
-  background-color: #333333; /* Color of the scrollbar track */
+  /* background: #fb2c2c; */
+  background: transparent;
+  border-radius: 8px; /* Added border-radius */
 }
 
-/* Customizing the scrollbar for Firefox */
-.scrolling-wrapper {
-  scrollbar-width: thin; /* For Firefox */
-  scrollbar-color: rgb(255,0,0) #333333; /* Thumb and track color */
+.scrolling-wrapper::-webkit-scrollbar-button {
+  background: #ff0000;
+  height: 15px;
+  border-radius: 50%;
 }
 
 
-.scrolling-card {
-  flex: 0 0 auto;
-  width: 220px;
-}
-
+/* Recommendation section */
 .recommendation-wrapper {
   overflow-x: auto;
   white-space: nowrap;
   padding-bottom: 20px;
 }
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -175px;
-}
-.col-6 {
-  flex: 0 0 50%;
-  padding-right: 10px;
-  width: 50%;
+
+.card-img {
+  border-radius: 2rem;
 }
 
-.col-3 {
-  flex: 0 0 25%;
-  max-width: 15%; /* Adjusted max-width to 50% for mobile view */
+.myCard {
+  border-radius: 2rem;
 }
 
-.recommendation-wrapper .row {
-  margin-bottom: 20px;
+/* Media queries */
+@media (max-width: 768px) {
+  .col-md-2 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-right: 10px;
+  }
+  .scrolling-card,
+  .card {
+    flex: 0 0 calc(50% - 20px);
+  }
 }
-
-/* Media query */
